@@ -1,0 +1,3 @@
+# APK build tools (Linux or WSL only). Install in a separate virtual environment.
+buildozer==1.6.0
+setuptools
