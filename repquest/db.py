@@ -1,11 +1,11 @@
-"""SQLite connection and starter setup. Owner: Mehmet Arif Yörük (architecture, data design, integration).
+"""Shared SQLite connection and starter setup, used by every team feature.
 
 What exists now: a connection helper and an idempotent setup that works on an empty file. It creates only the
-``schema_meta`` table, which records the schema version.
+``schema_meta`` table, which records the schema version. The app calls ``init_db`` on start with a file in the app's
+private data folder, so it works offline on the phone.
 
-TODO (Mehmet Arif): design the product tables and their relations (profiles, exercises, templates, completed workouts,
-sets, XP events, friendships, ...) following the shared contract in ``repquest/contracts.py`` and the README, add them
-in ``init_db`` with a schema version bump, and integrate the team modules.
+The product tables and their relations are Mehmet Arif Yörük's assignment (``team/mehmet_arif/schema.py``). Changes to
+this shared file are coordinated through the team.
 """
 
 from __future__ import annotations

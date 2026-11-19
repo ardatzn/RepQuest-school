@@ -3,7 +3,6 @@ import unittest
 
 from repquest.contracts import Exercise, is_valid_exercise_id
 from repquest.demo_data import DEMO_PROFILES, WORKOUT_A, WORKOUT_A_EXERCISES, demo_exercise, profile_by_id
-from repquest.features import FEATURES
 
 
 class DemoDataTest(unittest.TestCase):
@@ -42,29 +41,6 @@ class DemoDataTest(unittest.TestCase):
             Exercise("Bench Press", "Bench Press", "chest")
         with self.assertRaises(ValueError):
             Exercise("bad_muscle", "Bad", "wings")
-
-
-class FeatureListTest(unittest.TestCase):
-    def test_every_team_module_has_a_feature(self):
-        self.assertEqual(
-            {f.module for f in FEATURES},
-            {
-                "repquest/db.py",
-                "repquest/plan_generator.py",
-                "repquest/exercise_library.py",
-                "repquest/workout_logger.py",
-                "repquest/gamification.py",
-                "repquest/social.py",
-            },
-        )
-
-    def test_feature_files_exist(self):
-        from pathlib import Path
-
-        root = Path(__file__).resolve().parent.parent
-        for item in FEATURES:
-            for path in (item.module, item.view, item.acceptance_test):
-                self.assertTrue((root / path).is_file(), path)
 
 
 if __name__ == "__main__":

@@ -2,8 +2,16 @@
 __pycache__/
 *.py[cod]
 .venv/
+.venv-build/
 venv/
 .pytest_cache/
+
+# Buildozer and APK output
+.buildozer/
+bin/
+dist/
+*.apk
+*.aab
 
 # Local SQLite data (each developer creates their own)
 data/
@@ -11,9 +19,10 @@ data/
 *.sqlite
 *.sqlite3
 
-# Secrets and local settings
+# Secrets, keystores and local settings
 .env
-.streamlit/secrets.toml
+*.keystore
+*.jks
 
 # Editors and OS
 .idea/

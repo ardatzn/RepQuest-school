@@ -18,15 +18,15 @@ EXERCISE_ID_PATTERN = re.compile(r"^[a-z0-9_]{1,64}$")
 
 # Muscle group ids and their display labels, in fixed product order (same ids as the Android app).
 MUSCLE_GROUPS: dict[str, str] = {
-    "chest": "Göğüs",
-    "back": "Sırt",
-    "legs": "Bacak",
-    "shoulders": "Omuz",
-    "arms": "Kol",
-    "core": "Karın (core)",
+    "chest": "Chest",
+    "back": "Back",
+    "legs": "Legs",
+    "shoulders": "Shoulders",
+    "arms": "Arms",
+    "core": "Core",
 }
 
-# Fitness level comes from the level test (plan_generator). It is separate from the game level that XP gives.
+# Fitness level comes from the level test (team/arda). It is separate from the game level that XP gives.
 FITNESS_LEVELS: tuple[str, ...] = ("beginner", "intermediate", "advanced")
 
 
