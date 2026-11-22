@@ -9,12 +9,12 @@ from __future__ import annotations
 from repquest.contracts import Exercise, Profile, TemplateExercise, WorkoutTemplate
 
 DEMO_PROFILES: tuple[Profile, ...] = (
-    Profile(user_id="demo_deniz", display_name="Deniz (demo)", note="Kurgusal demo profili 1"),
-    Profile(user_id="demo_ece", display_name="Ece (demo)", note="Kurgusal demo profili 2"),
+    Profile(user_id="demo_deniz", display_name="Deniz (demo)", note="Fictional demo profile 1"),
+    Profile(user_id="demo_ece", display_name="Ece (demo)", note="Fictional demo profile 2"),
 )
 
 # The three exercises of Workout A, with the same ids and muscle mapping as the Android app.
-# Ferhat's exercise library adds more exercises and must keep these three ids unchanged.
+# Ferhat's exercise library (team/ferhat) adds more exercises and must keep these three ids unchanged.
 WORKOUT_A_EXERCISES: tuple[Exercise, ...] = (
     Exercise("bench_press", "Bench Press", "chest", ("arms", "shoulders")),
     Exercise("dumbbell_row", "Dumbbell Row", "back", ("arms",)),
