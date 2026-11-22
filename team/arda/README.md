@@ -2,7 +2,7 @@
 
 **Student:** Arda Tözün
 **Folder:** `team/arda/`
-**In the app:** Home menu → Team features → Fitness Level Test and Personal Workout Plan
+**In the app:** **Training → Fitness Level Test**, or **Training → Programs**
 
 A short fitness test that sets the user's fitness level and builds a personal weekly plan.
 
@@ -30,7 +30,7 @@ Entering 20 push-ups, 30 squats, a 60-second plank and 3 training days twice giv
 
 1. Create your branch from the latest `main`:
    `git switch main && git pull && git switch -c feature/arda-<topic>`
-2. Run the app on your computer with `python main.py` and open your screen from the home menu.
+2. Run the app on your computer with `python main.py` and open your screen: Training tab → Fitness Level Test.
 3. Change files in this folder only. Shared files (`main.py`, `repquest/`, `tests/`, `buildozer.spec`,
    `requirements*.txt`) change only after the team agrees in a pull request.
 4. Run `pytest`, push your branch and open a pull request to `main`.

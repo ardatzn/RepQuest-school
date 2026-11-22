@@ -1,4 +1,4 @@
-"""Judith Ilunga's assignment. The placeholder screen and the home menu show these texts."""
+"""Judith Ilunga's assignment. Your screen shows these texts until you build the feature."""
 
 from repquest.assignments import Assignment
 

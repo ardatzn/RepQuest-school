@@ -1,4 +1,4 @@
-"""Arda Tözün's assignment. The placeholder screen and the home menu show these texts."""
+"""Arda Tözün's assignment. Your screen shows these texts until you build the feature."""
 
 from repquest.assignments import Assignment
 

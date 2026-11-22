@@ -12,24 +12,31 @@ manager to install apps when Android asks. The app is called **RepQuest School**
 
 ## Team Fusion assignments
 
-| Student | Folder | Screen and feature to complete |
-|---|---|---|
-| Mehmet Arif Yörük | [`team/mehmet_arif/`](team/mehmet_arif/) | Database and Integration |
-| Arda Tözün | [`team/arda/`](team/arda/) | Fitness Level Test and Personal Workout Plan |
-| Ferhat Altunel | [`team/ferhat/`](team/ferhat/) | Exercise Library, Search, and Filters |
-| Judith Ilunga | [`team/judith/`](team/judith/) | Workout Logging, History, and Streaks |
-| Duru Göktaş | [`team/duru/`](team/duru/) | XP, Game Levels, and Avatar |
-| Kelvin Chukwukelu | [`team/kelvin/`](team/kelvin/) | Friends and Weekly Leaderboard |
+| Student | Folder | Screen and feature to complete | Where it opens in the app |
+|---|---|---|---|
+| Mehmet Arif Yörük | [`team/mehmet_arif/`](team/mehmet_arif/) | Database and Integration | Training → Database & Integration |
+| Arda Tözün | [`team/arda/`](team/arda/) | Fitness Level Test and Personal Workout Plan | Training → Fitness Level Test, or Training → Programs |
+| Ferhat Altunel | [`team/ferhat/`](team/ferhat/) | Exercise Library, Search, and Filters | Training → Exercise Library |
+| Judith Ilunga | [`team/judith/`](team/judith/) | Workout Logging, History, and Streaks | Training → History, or Progress → Consistency |
+| Duru Göktaş | [`team/duru/`](team/duru/) | XP, Game Levels, and Avatar | Hero → Avatar Studio |
+| Kelvin Chukwukelu | [`team/kelvin/`](team/kelvin/) | Friends and Weekly Leaderboard | Progress → Friends & Weekly Leaderboard |
 
-In the app, open **Home → Team features** and tap your feature. Your screen shows your feature name, your name, what
-you will build and an acceptance example. The README in your folder lists your files and the same details.
+Open the tab at the bottom of the app, then tap the row. The menus use plain feature labels; your screen shows your
+feature name with **Assigned to** and your name under it, then what you will build and an acceptance example. The
+README in your folder lists your files and the same details.
 
 ## What the starter app does
 
-- Opens offline to a home menu with two fictional demo profiles, Deniz (demo) and Ece (demo).
-- Shows the starter **Workout A** from the original RepQuest app as a read-only example: Bench Press, Dumbbell Row
-  and Squat, three sets each.
-- Opens all six student screens from the menu. The **Home** button and the Android Back gesture return to the menu.
+- Opens offline to a Home tab laid out like the original RepQuest Home: the REPQUEST wordmark, a progress card with
+  the avatar, game level and XP bar, and the suggested **Workout A**.
+- Has the original four bottom tabs in the same order: **Home**, **Training**, **Progress** and **Hero**. Each tab keeps
+  its own screens, and the selected tab is highlighted.
+- Shows **Workout A** from the original app as a read-only preview: Bench Press, Dumbbell Row and Squat, three sets
+  each. It opens from Home (**Preview Workout A**) and from Training → Workout A.
+- Opens all six student screens from the Training, Progress and Hero menus. The back arrow and the Android Back gesture
+  return to the menu the screen was opened from; Back on a tab returns to Home.
+- Has two fictional demo profiles, Deniz (demo) and Ece (demo). Choose one with the person button at the top right of
+  Home. Every tab keeps the profile you chose.
 - Creates a local SQLite database in the app's private storage on first start.
 
 The feature logic itself (level test, plan, library search, logging, streaks, XP, avatar, friends and leaderboard) is
@@ -57,8 +64,9 @@ The desktop app uses a database in your user data folder. To use another file, s
 pytest
 ```
 
-- `tests/` checks the shared starter: data contracts, SQLite setup, build settings, the menu and navigation. The
-  navigation tests open a Kivy window and are skipped on a machine without a display.
+- `tests/` checks the shared starter: data contracts, SQLite setup, build settings, the tab back stacks, every menu
+  route, Back and the profile choice. The tests in `tests/test_ui.py` open a Kivy window and are skipped on a machine
+  without a display.
 - `team/<name>/test_*.py` holds each student's acceptance test. They are skipped until the student removes the `skip`
   line and writes the scenario.
 
@@ -88,14 +96,16 @@ buildozer.spec              Android build settings
 assets/                     App icon and splash image
 p4a_recipes/                APK build recipe: Kivy without network-only packages (not part of the app)
 repquest/                   Shared code: change only after the team agrees
-  app.py                    App, screen manager, navigation, database setup
+  app.py                    App, bottom tabs, screen changes, database setup
+  navigation.py             The four tabs and their back stacks (no Kivy, tested on its own)
+  routes.py                 Training, Progress and Hero menu rows and the screen each one opens
   contracts.py              Shared data contract: IDs, muscle groups, fitness levels
   demo_data.py              Two demo profiles and Workout A (read-only)
   db.py                     SQLite connection and starter setup
   assignments.py            The Assignment type every student folder uses
   team_registry.py          The six assignments in menu order
   theme.py                  Colors from the original RepQuest palette
-  ui/                       Home menu, Workout A screen, StudentScreen base class, widgets
+  ui/                       Home, tab screens, Workout A preview, StudentScreen base class, widgets
 team/<name>/                One folder per student: screen, feature code, acceptance test, README
 tests/                      Tests for the shared starter
 ```

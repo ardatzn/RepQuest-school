@@ -2,7 +2,7 @@
 
 **Student:** Duru Göktaş
 **Folder:** `team/duru/`
-**In the app:** Home menu → Team features → XP, Game Levels, and Avatar
+**In the app:** **Hero → Avatar Studio**
 
 Turn finished workouts into XP, game levels and avatar progress.
 
@@ -31,7 +31,7 @@ A finished Workout A with 9 completed sets gives XP once. Awarding XP again for 
 
 1. Create your branch from the latest `main`:
    `git switch main && git pull && git switch -c feature/duru-<topic>`
-2. Run the app on your computer with `python main.py` and open your screen from the home menu.
+2. Run the app on your computer with `python main.py` and open your screen: Hero tab → Avatar Studio.
 3. Change files in this folder only. Shared files (`main.py`, `repquest/`, `tests/`, `buildozer.spec`,
    `requirements*.txt`) change only after the team agrees in a pull request.
 4. Run `pytest`, push your branch and open a pull request to `main`.

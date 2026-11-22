@@ -3,6 +3,7 @@
 import unittest
 from pathlib import Path
 
+from repquest.routes import routes_to
 from repquest.team_registry import ASSIGNMENTS
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -52,6 +53,16 @@ class TeamAssignmentsTest(unittest.TestCase):
                 self.assertIn("## Expected behavior", readme)
                 self.assertIn("## Acceptance example", readme)
                 self.assertIn(item.acceptance_example, readme)
+
+    def test_folder_readme_names_every_route_to_the_screen(self):
+        for item in ASSIGNMENTS:
+            readme = (ROOT / item.folder / "README.md").read_text(encoding="utf-8")
+            routes = routes_to(item.screen_name)
+            with self.subTest(folder=item.folder):
+                self.assertTrue(routes)
+                for route in routes:
+                    self.assertIn(f"**{route}**", readme)
+                self.assertNotIn("Team features", readme)
 
 
 if __name__ == "__main__":

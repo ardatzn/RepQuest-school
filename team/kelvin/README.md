@@ -2,7 +2,7 @@
 
 **Student:** Kelvin Chukwukelu
 **Folder:** `team/kelvin/`
-**In the app:** Home menu → Team features → Friends and Weekly Leaderboard
+**In the app:** **Progress → Friends & Weekly Leaderboard**
 
 Connect the two demo profiles as friends and rank them by XP earned in the selected week.
 
@@ -30,7 +30,7 @@ After Deniz and Ece become friends, both appear on each other's leaderboard, and
 
 1. Create your branch from the latest `main`:
    `git switch main && git pull && git switch -c feature/kelvin-<topic>`
-2. Run the app on your computer with `python main.py` and open your screen from the home menu.
+2. Run the app on your computer with `python main.py` and open your screen: Progress tab → Friends & Weekly Leaderboard.
 3. Change files in this folder only. Shared files (`main.py`, `repquest/`, `tests/`, `buildozer.spec`,
    `requirements*.txt`) change only after the team agrees in a pull request.
 4. Run `pytest`, push your branch and open a pull request to `main`.
